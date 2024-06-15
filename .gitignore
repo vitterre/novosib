@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,vue,vuejs
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,vue,vuejs
+# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,vue,vuejs
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,vue,vuejs
 
 ### Node ###
 # Logs
@@ -44,7 +44,6 @@ build/Release
 
 # Dependency directories
 node_modules/
-**/.vitepress/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -142,6 +141,25 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
 ### Vue ###
 # gitignore template for Vue.js projects
 #
@@ -160,4 +178,7 @@ dist/
 npm-debug.log
 yarn-error.log
 
-# End of https://www.toptal.com/developers/gitignore/api/node,vue,vuejs
+# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,vue,vuejs
+
+**/.vitepress/dist
+**/.vitepress/cache
