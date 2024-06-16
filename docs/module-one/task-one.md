@@ -71,6 +71,19 @@ vim /etc/net/ifaces/enp0s8/options
 cp –r /etc/net/ifaces/enp0s8/ /etc/net/ifaces/enp0s9/
 ```
 
+Если что, вот полный конфиг `BOOTPROTO` для ISP
+```bash
+NM_CONTROLLED=no
+SYSTEMD CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG WIRELESS=no
+BOOTPROTO=static
+SYSTEMD BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
 Назначаем IP-адреса на интерфейсы `enp0s8` и `enp0s9`
 ```bash
 echo 10.10.10.1/30 > /etc/net/ifaces/enp0s8/ipv4address
@@ -91,6 +104,19 @@ vim /etc/net/ifaces/enp0s3/options
 Меняем параметр `BOOTPROTO`, который отвечает за способ получения сетевой картой сетевого адреса, вместо значения `dhcp` указываем `static`. Копируем каталог с настройками сетевого интерфейса `enp0s3` в каталог для сетевого интерфейса `enp0s8`
 ```bash
 cp –r /etc/net/ifaces/enp0s3/ /etc/net/ifaces/enp0s8/
+```
+
+Если что, вот полный конфиг `BOOTPROTO` для HQ-R
+```bash
+NM_CONTROLLED=no
+SYSTEMD CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG WIRELESS=no
+BOOTPROTO=static
+SYSTEMD BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
 ```
 
 Назначаем IP-адреса на интерфейсы `enp0s3` и `enp0s8`
@@ -140,6 +166,19 @@ vim /etc/net/ifaces/enp0s3/options
 cp –r /etc/net/ifaces/enp0s3/ /etc/net/ifaces/enp0s8/
 ```
 
+Если что, вот полный конфиг `BOOTPROTO` для BR-R
+```bash
+NM_CONTROLLED=no
+SYSTEMD CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG WIRELESS=no
+BOOTPROTO=static
+SYSTEMD BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
 Назначаем IP-адреса на интерфейсы `enp0s3` и `enp0s8`
 ```bash
 echo 10.10.20.2/30 > /etc/net/ifaces/enp0s3/ipv4address
@@ -159,6 +198,25 @@ systemctl restart network
 ```
 
 ### На BR-SRV
+
+Меняем параметр `BOOTPROTO`, который отвечает за способ получения сетевой картой сетевого адреса, вместо значения `dhcp` указываем `static`. Копируем каталог с настройками сетевого интерфейса `enp0s3` в каталог для сетевого интерфейса `enp0s8`
+```bash
+cp –r /etc/net/ifaces/enp0s3/ /etc/net/ifaces/enp0s8/
+```
+
+Если что, вот полный конфиг `BOOTPROTO` для BR-SRV
+```bash
+NM_CONTROLLED=no
+SYSTEMD CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG WIRELESS=no
+BOOTPROTO=static
+SYSTEMD BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
 Назначаем IP-адреса на интерфейс `enp0s3`
 ```bash
 echo 192.168.200.2/28 > /etc/net/ifaces/enp0s3/ipv4address
