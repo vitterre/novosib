@@ -60,3 +60,4 @@ apt-get update && apt-get install frr -y
 ```
 
 ## a. Составьте топологию сети L3.
+![](../../assets/L3-topology.png)

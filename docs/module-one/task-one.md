@@ -74,12 +74,25 @@ cp –r /etc/net/ifaces/enp0s8/ /etc/net/ifaces/enp0s9/
 Если что, вот полный конфиг `BOOTPROTO` для ISP
 ```bash
 NM_CONTROLLED=no
-SYSTEMD CONTROLLED=yes
+SYSTEMD_CONTROLLED=yes
 DISABLED=no
 TYPE=eth
-CONFIG WIRELESS=no
+CONFIG_WIRELESS=no
 BOOTPROTO=static
-SYSTEMD BOOTPROTO=static
+SYSTEMD_BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
+Для enp0s8
+```bash
+NM_CONTROLLED=no
+SYSTEMD_CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG_WIRELESS=no
+BOOTPROTO=dhcp
+SYSTEMD_BOOTPROTO=dhcp4
 CONFIG_IPV4=yes
 ONBOOT=yes
 ```
@@ -93,6 +106,11 @@ echo 10.10.20.1/30 > /etc/net/ifaces/enp0s9/ipv4address
 Для применения настроек необходимо перезапустить сеть
 ```bash
 systemctl restart network
+```
+
+**Для доступа в интернет устройств HQ-R и BR-R**
+```bash
+iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 ```
 
 ### На HQ-R
@@ -109,12 +127,25 @@ cp –r /etc/net/ifaces/enp0s3/ /etc/net/ifaces/enp0s8/
 Если что, вот полный конфиг `BOOTPROTO` для HQ-R
 ```bash
 NM_CONTROLLED=no
-SYSTEMD CONTROLLED=yes
+SYSTEMD_CONTROLLED=yes
 DISABLED=no
 TYPE=eth
-CONFIG WIRELESS=no
+CONFIG_WIRELESS=no
 BOOTPROTO=static
-SYSTEMD BOOTPROTO=static
+SYSTEMD_BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
+Для enp0s8
+```bash
+NM_CONTROLLED=no
+SYSTEMD_CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG_WIRELESS=no
+BOOTPROTO=dhcp
+SYSTEMD_BOOTPROTO=dhcp4
 CONFIG_IPV4=yes
 ONBOOT=yes
 ```
@@ -169,12 +200,25 @@ cp –r /etc/net/ifaces/enp0s3/ /etc/net/ifaces/enp0s8/
 Если что, вот полный конфиг `BOOTPROTO` для BR-R
 ```bash
 NM_CONTROLLED=no
-SYSTEMD CONTROLLED=yes
+SYSTEMD_CONTROLLED=yes
 DISABLED=no
 TYPE=eth
-CONFIG WIRELESS=no
+CONFIG_WIRELESS=no
 BOOTPROTO=static
-SYSTEMD BOOTPROTO=static
+SYSTEMD_BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
+Для enp0s8
+```bash
+NM_CONTROLLED=no
+SYSTEMD_CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG_WIRELESS=no
+BOOTPROTO=dhcp
+SYSTEMD_BOOTPROTO=dhcp4
 CONFIG_IPV4=yes
 ONBOOT=yes
 ```
@@ -207,12 +251,25 @@ cp –r /etc/net/ifaces/enp0s3/ /etc/net/ifaces/enp0s8/
 Если что, вот полный конфиг `BOOTPROTO` для BR-SRV
 ```bash
 NM_CONTROLLED=no
-SYSTEMD CONTROLLED=yes
+SYSTEMD_CONTROLLED=yes
 DISABLED=no
 TYPE=eth
-CONFIG WIRELESS=no
+CONFIG_WIRELESS=no
 BOOTPROTO=static
-SYSTEMD BOOTPROTO=static
+SYSTEMD_BOOTPROTO=static
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
+Для enp0s8
+```bash
+NM_CONTROLLED=no
+SYSTEMD_CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG_WIRELESS=no
+BOOTPROTO=dhcp
+SYSTEMD_BOOTPROTO=dhcp4
 CONFIG_IPV4=yes
 ONBOOT=yes
 ```
