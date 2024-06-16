@@ -12,3 +12,4 @@ layout: doc
 6. [`Задание 6`](./task-six)
 7. [`Задание 7`](./task-seven)
 8. [`Задание 8`](./task-eight)
+9. [`Настройка Network Manager`](./network-manager)
