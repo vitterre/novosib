@@ -167,7 +167,7 @@ echo 192.168.200.2/28 > /etc/net/ifaces/enp0s3/ipv4address
 Назначаем шлюз по умолчанию, DNS-сервер и домен поиска на интерфейс 
 
 ```bash
-echo default via 192.168.200.1> /etc/net/ifaces/enp0s3/ipv4route
+echo default via 192.168.200.1 > /etc/net/ifaces/enp0s3/ipv4route
 echo nameserver 1.1.1.1  > /etc/net/ifaces/enp0s3/resolv.conf
 echo search hq.work branch.work  >> /etc/net/ifaces/enp0s3/resolv.conf
 ```
