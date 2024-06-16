@@ -7,6 +7,6 @@ hero:
   actions:
     - theme: brand
       text: Читать
-      link: /docs/index.md
+      link: ./docs/index.md
 ---
 
