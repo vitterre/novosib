@@ -79,7 +79,7 @@ echo 10.10.20.1/30 > /etc/net/ifaces/enp0s9/ipv4address
 
 Для применения настроек необходимо перезапустить сеть
 ```bash
-systemct restart network
+systemctl restart network
 ```
 
 ### На HQ-R
