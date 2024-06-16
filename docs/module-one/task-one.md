@@ -169,6 +169,24 @@ systemctl restart network
 ```
 
 ### На HQ-SRV
+Меняем параметр `BOOTPROTO`, который отвечает за способ получения сетевой картой сетевого адреса, вместо значения `dhcp` указываем `static`. Копируем каталог с настройками сетевого интерфейса `enp0s3` в каталог для сетевого интерфейса `enp0s8`
+```bash
+cp –r /etc/net/ifaces/enp0s3/ /etc/net/ifaces/enp0s8/
+```
+
+Если что, вот полный конфиг `BOOTPROTO` для HQ-SRV (enp0s3)
+```bash
+NM_CONTROLLED=no
+SYSTEMD_CONTROLLED=yes
+DISABLED=no
+TYPE=eth
+CONFIG_WIRELESS=no
+BOOTPROTO=dhcp
+SYSTEMD_BOOTPROTO=dhcp4
+CONFIG_IPV4=yes
+ONBOOT=yes
+```
+
 Назначаем IP-адреса на интерфейс `enp0s3`
 ```bash
 echo 192.168.100.2/26 > /etc/net/ifaces/enp0s3/ipv4address
